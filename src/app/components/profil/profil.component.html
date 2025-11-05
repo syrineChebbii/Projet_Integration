@@ -1,0 +1,39 @@
+<div class="inscription-container profil-container">
+  <h2>Mon Profil</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSave()" class="inscription-form">
+
+    <!-- Sexe -->
+    <div class="sexe">
+      <label><input type="radio" formControlName="sexe" value="Homme"> Homme</label>
+      <label><input type="radio" formControlName="sexe" value="Femme"> Femme</label>
+    </div>
+
+    <!-- Prénom & Nom -->
+    <div class="form-row">
+      <input type="text" formControlName="prenom" placeholder="Prénom">
+      <input type="text" formControlName="nom" placeholder="Nom">
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <input type="email" formControlName="email" placeholder="E-mail" disabled>
+    </div>
+
+    <!-- Nationalité & Date de naissance -->
+    <div class="form-row">
+      <input type="text" formControlName="nationalite" placeholder="Nationalité">
+      <input type="date" formControlName="dateNaissance">
+    </div>
+
+    <!-- Type & Numéro pièce identité -->
+    <div class="form-row">
+      <input type="text" formControlName="typePieceIdentite" placeholder="Type de pièce">
+      <input type="text" formControlName="numeroPieceIdentite" placeholder="Numéro de pièce">
+    </div>
+
+    <!-- Bouton -->
+    <button type="submit" [disabled]="userForm.invalid">💾 Enregistrer</button>
+
+  </form>
+</div>

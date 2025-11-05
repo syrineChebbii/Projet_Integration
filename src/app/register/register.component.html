@@ -1,0 +1,59 @@
+<div class="inscription-container">
+  <h2>Créer un compte</h2>
+
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm" class="inscription-form">
+
+    <!-- Sexe -->
+    <div class="sexe">
+      <label><input type="radio" name="sexe" value="Homme" [(ngModel)]="sexe"> Homme</label>
+      <label><input type="radio" name="sexe" value="Femme" [(ngModel)]="sexe"> Femme</label>
+    </div>
+
+    <!-- Prénom & Nom -->
+    <div class="form-row">
+      <input type="text" name="prenom" placeholder="Prénom" [(ngModel)]="prenom" required autocomplete="off">
+      <input type="text" name="nom" placeholder="Nom" [(ngModel)]="nom" required autocomplete="off">
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <input type="email" name="email" placeholder="E-mail" [(ngModel)]="email" required autocomplete="off">
+    </div>
+
+    <!-- Mot de passe -->
+    <div class="form-group">
+      <input type="password" name="motDePasse" placeholder="Mot de passe" [(ngModel)]="motDePasse" required autocomplete="new-password">
+    </div>
+
+    <!-- Bouton -->
+    <button type="submit" [disabled]="!registerForm.form.valid">S'inscrire</button>
+
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

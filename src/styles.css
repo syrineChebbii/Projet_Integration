@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+/* Assurer que html et body prennent toute la hauteur */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Centrer tout le contenu du composant racine */
+app-root {
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  align-items: center;     /* centre verticalement */
+  height: 100%;            /* prend toute la hauteur de la page */
+  background: #f0f2f5;     /* fond optionnel */
+}
