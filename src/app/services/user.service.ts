@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -15,18 +14,12 @@ export interface User {
   email?: string;
 }
 
-=======
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
->>>>>>> frontLogin
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-<<<<<<< HEAD
 
-  private apiUrl = 'http://localhost:8081/api/user';
+  private apiUrl = 'http://localhost:8081/api/user'; // ton backend actuel
 
   constructor(private http: HttpClient) {}
 
@@ -53,13 +46,10 @@ export class UserService {
     return this.http.put<User>(`${this.apiUrl}/update`, user, {
       headers: this.getAuthHeaders()
     });
-=======
-  private apiUrl = 'http://localhost:8080/api/users'; // adapte selon ton backend
+  }
 
-  constructor(private http: HttpClient) {}
-
+  // Méthode ajoutée depuis frontLogin
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
->>>>>>> frontLogin
   }
 }

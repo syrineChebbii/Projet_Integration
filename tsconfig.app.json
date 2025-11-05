@@ -11,11 +11,7 @@
   "files": [
     "src/main.ts",
     "src/main.server.ts",
-<<<<<<< HEAD
     "src/server.ts"
-=======
-    "server.ts"
->>>>>>> frontLogin
   ],
   "include": [
     "src/**/*.d.ts"

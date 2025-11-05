@@ -3,87 +3,32 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-<<<<<<< HEAD
-    "voyage-frontend": {
-      "projectType": "application",
-      "schematics": {},
-=======
     "mon-projet": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
->>>>>>> frontLogin
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-<<<<<<< HEAD
-            "outputPath": "dist/voyage-frontend",
-=======
             "outputPath": "dist/mon-projet",
->>>>>>> frontLogin
             "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "main": "src/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-<<<<<<< HEAD
-=======
-            "inlineStyleLanguage": "scss",
->>>>>>> frontLogin
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-<<<<<<< HEAD
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-=======
-              "src/styles.scss"
-            ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
->>>>>>> frontLogin
-            }
+            "assets": [{"glob": "**/*","input": "public","output": "/"}],
+            "styles": ["src/styles.scss"],
+            "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-<<<<<<< HEAD
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-=======
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
->>>>>>> frontLogin
-                }
+                {"type": "initial","maximumWarning": "500kB","maximumError": "1MB"},
+                {"type": "anyComponentStyle","maximumWarning": "2kB","maximumError": "4kB"}
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true
             },
             "development": {
               "optimization": false,
@@ -96,54 +41,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-<<<<<<< HEAD
-              "buildTarget": "voyage-frontend:build:production"
-            },
-            "development": {
-              "buildTarget": "voyage-frontend:build:development"
-=======
-              "buildTarget": "mon-projet:build:production"
-            },
-            "development": {
-              "buildTarget": "mon-projet:build:development"
->>>>>>> frontLogin
-            }
+            "production": {"buildTarget": "mon-projet:build:production"},
+            "development": {"buildTarget": "mon-projet:build:development"}
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-<<<<<<< HEAD
-=======
-            "inlineStyleLanguage": "scss",
->>>>>>> frontLogin
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-<<<<<<< HEAD
-              "src/styles.css"
-=======
-              "src/styles.scss"
->>>>>>> frontLogin
-            ],
-            "scripts": []
-          }
         }
       }
     }
-  }
+  },
+  "defaultProject": "monProjet"
 }

@@ -17,7 +17,7 @@
 
     <!-- Email -->
     <div class="form-group">
-      <input type="email" formControlName="email" placeholder="E-mail" disabled>
+      <input type="email" formControlName="email" placeholder="E-mail" [disabled]="true">
     </div>
 
     <!-- Nationalité & Date de naissance -->
@@ -33,7 +33,7 @@
     </div>
 
     <!-- Bouton -->
-    <button type="submit" [disabled]="userForm.invalid">💾 Enregistrer</button>
+    <button type="submit" [disabled]="!userForm">💾 Enregistrer</button>
 
   </form>
 </div>
