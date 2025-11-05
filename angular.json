@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "voyage-frontend": {
       "projectType": "application",
       "schematics": {},
+=======
+    "mon-projet": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+>>>>>>> frontLogin
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,13 +23,21 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+<<<<<<< HEAD
             "outputPath": "dist/voyage-frontend",
+=======
+            "outputPath": "dist/mon-projet",
+>>>>>>> frontLogin
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+<<<<<<< HEAD
+=======
+            "inlineStyleLanguage": "scss",
+>>>>>>> frontLogin
             "assets": [
               {
                 "glob": "**/*",
@@ -27,6 +45,7 @@
               }
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.css"
             ],
             "scripts": [],
@@ -34,6 +53,15 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
+=======
+              "src/styles.scss"
+            ],
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+>>>>>>> frontLogin
             }
           },
           "configurations": {
@@ -46,8 +74,13 @@
                 },
                 {
                   "type": "anyComponentStyle",
+<<<<<<< HEAD
                   "maximumWarning": "4kB",
                   "maximumError": "8kB"
+=======
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+>>>>>>> frontLogin
                 }
               ],
               "outputHashing": "all"
@@ -64,10 +97,17 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
+<<<<<<< HEAD
               "buildTarget": "voyage-frontend:build:production"
             },
             "development": {
               "buildTarget": "voyage-frontend:build:development"
+=======
+              "buildTarget": "mon-projet:build:production"
+            },
+            "development": {
+              "buildTarget": "mon-projet:build:development"
+>>>>>>> frontLogin
             }
           },
           "defaultConfiguration": "development"
@@ -83,6 +123,10 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+<<<<<<< HEAD
+=======
+            "inlineStyleLanguage": "scss",
+>>>>>>> frontLogin
             "assets": [
               {
                 "glob": "**/*",
@@ -90,7 +134,11 @@
               }
             ],
             "styles": [
+<<<<<<< HEAD
               "src/styles.css"
+=======
+              "src/styles.scss"
+>>>>>>> frontLogin
             ],
             "scripts": []
           }

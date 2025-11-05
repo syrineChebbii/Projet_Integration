@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+<<<<<<< HEAD
 import {RegisterComponent} from './register/register.component';
 
 @Component({
@@ -11,3 +12,13 @@ import {RegisterComponent} from './register/register.component';
 export class AppComponent {
   title = 'voyage-frontend';
 }
+=======
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
+  template: `<router-outlet></router-outlet>`,
+})
+export class AppComponent {}
+>>>>>>> frontLogin

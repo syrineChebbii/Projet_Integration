@@ -12,11 +12,24 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+<<<<<<< HEAD
+=======
+    "sourceMap": true,
+    "declaration": false,
+>>>>>>> frontLogin
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
+<<<<<<< HEAD
     "module": "ES2022"
+=======
+    "module": "ES2022",
+    "lib": [
+      "ES2022",
+      "dom"
+    ]
+>>>>>>> frontLogin
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
