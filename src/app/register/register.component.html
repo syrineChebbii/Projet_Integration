@@ -2,7 +2,6 @@
   <h2>Créer un compte</h2>
 
   <form (ngSubmit)="onSubmit()" #registerForm="ngForm" class="inscription-form">
-
     <!-- Sexe -->
     <div class="sexe">
       <label><input type="radio" name="sexe" value="Homme" [(ngModel)]="sexe"> Homme</label>
@@ -27,33 +26,5 @@
 
     <!-- Bouton -->
     <button type="submit" [disabled]="!registerForm.form.valid">S'inscrire</button>
-
   </form>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

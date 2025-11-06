@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,RouterModule],
   template: `
   <div class="login-wrapper">
     <div class="login-card">
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
       </div>
 
       <button (click)="login()">Se connecter</button>
+      <a routerLink="/register" class="forgot-password">Pas encore de compte ? Inscrivez-vous</a>
       <a href="#" class="forgot-password">Mot de passe oublié ?</a>
     </div>
   </div>
