@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import { UserService, User } from '../../services/user.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { AuthService, User } from '../../services/auth.service'; // ← ajouter User
 
 @Component({
   selector: 'app-profil',
@@ -13,9 +13,9 @@ import { UserService, User } from '../../services/user.service';
 export class ProfilComponent implements OnInit {
 
   userForm!: FormGroup;
-  user!: User;
+  user!: User; // ← ajouter cette propriété
 
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.userForm = this.fb.group({
@@ -33,7 +33,7 @@ export class ProfilComponent implements OnInit {
   }
 
   loadUser() {
-    this.userService.getCurrentUser().subscribe({
+    this.authService.getCurrentUser().subscribe({
       next: (data) => {
         this.user = data;
         this.userForm.patchValue(data);
@@ -51,9 +51,9 @@ export class ProfilComponent implements OnInit {
 
   onSave() {
     const updatedUser: User = this.userForm.value;
-    this.userService.updateUser(updatedUser).subscribe({
+    this.authService.updateUser(updatedUser).subscribe({
       next: (data) => {
-        alert('Profil mis à jour ');
+        alert('Profil mis à jour');
         this.user = data;
         this.userForm.patchValue(data);
       },

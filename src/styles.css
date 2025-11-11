@@ -24,3 +24,23 @@ a {
 a:hover {
   text-decoration: underline;
 }
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.google-btn:hover {
+  background-color: #f7f7f7;
+}
+
+.google-btn img {
+  height: 20px;
+}

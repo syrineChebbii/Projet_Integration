@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import {AuthService} from '../../services/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -27,8 +30,15 @@ import { RouterModule } from '@angular/router';
 
       <button (click)="login()">Se connecter</button>
       <a routerLink="/register" class="forgot-password">Pas encore de compte ? Inscrivez-vous</a>
-      <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+      <a routerLink="/forgot-password" class="forgot-password">Mot de passe oublié ?</a>
+      <div class="google-login">
+  <a href="http://localhost:8081/oauth2/authorization/google" class="google-btn">
+    Se connecter avec Google
+  </a>
+</div>
+
     </div>
+
   </div>
   `,
   styles: [`
@@ -111,7 +121,14 @@ import { RouterModule } from '@angular/router';
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(108,99,255,0.5);
     }
-
+    .login-container button {
+      padding: 10px 20px;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
     .forgot-password {
       display: block;
       margin-top: 15px;
@@ -143,8 +160,23 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
+  constructor(private authService: AuthService, private router: Router) {}
+
   login() {
-    console.log('Email:', this.email, 'Password:', this.password);
-    // Appel au backend pour authentification
+    this.authService.login(this.email, this.password).subscribe({
+      next: (res) => {
+        // Ici tu peux stocker le token JWT si tu en utilises un
+        console.log('Connexion réussie', res);
+        this.router.navigate(['/profil']); // redirection après login
+      },
+      error: (err) => {
+        console.error(err);
+        this.errorMessage = 'Email ou mot de passe incorrect';
+      }
+    });
   }
+  loginWithGoogle() {
+    window.location.href = 'http://localhost:8081/oauth2/authorization/google';
+  }
+
 }
